@@ -1,0 +1,6 @@
+flutter_icons:
+  web:
+    generate: true
+    image_path: "assets/images/mobile-logo-3.jpeg"
+    background_color: "#00FFFFFF"
+    theme_color: "#f81d2f"

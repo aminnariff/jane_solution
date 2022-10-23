@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jane_solution/config/constants.dart';
 import 'package:jane_solution/config/platform.dart';
 import 'package:jane_solution/config/size.dart';
 import 'package:jane_solution/views/widgets/app_padding.dart';
@@ -6,7 +7,9 @@ import 'package:jane_solution/views/widgets/text_field/input_field.dart';
 import 'package:jane_solution/views/widgets/text_field/input_field_attribute.dart';
 import 'package:sizer/sizer.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:webviewx/webviewx.dart';
 
+//TODO: update contact us mobile and web
 class ContactUsToday extends StatefulWidget {
   const ContactUsToday({super.key});
 
@@ -16,6 +19,8 @@ class ContactUsToday extends StatefulWidget {
 
 class _ContactUsTodayState extends State<ContactUsToday> {
   List<InputFieldAttribute> inputList = [];
+  late WebViewXController webviewController;
+
   String? encodeQueryParameters(Map<String, String> params) {
     return params.entries
         .map((MapEntry<String, String> e) => '${Uri.encodeComponent(e.key)}=${Uri.encodeComponent(e.value)}')
@@ -62,18 +67,24 @@ class _ContactUsTodayState extends State<ContactUsToday> {
   }
 
   Widget mobileView() {
-    return const SizedBox();
     return SizedBox(
-      width: 60.w,
+      width: 100.w,
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           const AppPadding(denominator: 1 / 2).vertical(),
           Text(
             'Contact Us Today',
-            style: Theme.of(context).textTheme.headline1!.apply(fontSizeDelta: 5.5.sp),
+            style: Theme.of(context).textTheme.headline1!.apply(fontSizeDelta: 15.5.sp),
           ),
           const AppPadding().vertical(),
+          WebViewX(
+            width: 90.w,
+            height: 50.h,
+            initialContent: mobileMapContent,
+            initialSourceType: SourceType.html,
+            onWebViewCreated: (controller) => webviewController = controller,
+          ),
           Column(
             children: [
               for (InputFieldAttribute item in inputList)
@@ -125,7 +136,7 @@ class _ContactUsTodayState extends State<ContactUsToday> {
 
   Widget webView() {
     return SizedBox(
-      width: 60.w,
+      width: 80.w,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -137,14 +148,14 @@ class _ContactUsTodayState extends State<ContactUsToday> {
           const AppPadding().vertical(),
           Row(
             children: [
-              SizedBox(
-                width: 30.w,
-                child: Icon(
-                  Icons.abc_sharp,
-                  size: 50.sp,
-                ),
+              WebViewX(
+                width: 50.w,
+                height: 40.w,
+                initialContent: mapContent,
+                initialSourceType: SourceType.html,
+                onWebViewCreated: (controller) => webviewController = controller,
               ),
-              const AppPadding(),
+              const AppPadding(denominator: 1 / 2),
               Column(
                 children: [
                   for (InputFieldAttribute item in inputList)

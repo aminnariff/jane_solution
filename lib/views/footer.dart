@@ -18,8 +18,7 @@ class WebFooter extends StatelessWidget {
         Padding(
           padding: EdgeInsets.symmetric(horizontal: screenPadding / 2),
           child: SelectableTextWidget(
-            text:
-                'Jalan Hujan Rahmat, Taman Overseas Union, 58200 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur, Malaysia',
+            text: companyAddress,
             textStyle: Theme.of(context).textTheme.subtitle1!.apply(fontSizeDelta: isWebMobile ? 10.sp : 0),
             textAlign: TextAlign.center,
           ),

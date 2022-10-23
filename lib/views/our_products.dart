@@ -5,6 +5,7 @@ import 'package:jane_solution/views/widgets/app_padding.dart';
 import 'package:jane_solution/views/widgets/selectable_text.dart';
 import 'package:sizer/sizer.dart';
 
+//TODO: new ui and content
 class OurProducts extends StatefulWidget {
   const OurProducts({super.key});
 

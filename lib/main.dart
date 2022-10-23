@@ -7,6 +7,8 @@ import 'package:jane_solution/config/size.dart';
 import 'package:jane_solution/config/theme.dart';
 import 'package:sizer/sizer.dart';
 
+// update icon
+// flutter pub run flutter_launcher_icons:main
 ValueNotifier<int> pageIndex = ValueNotifier<int>(0);
 
 void main() {
