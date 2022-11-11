@@ -3,21 +3,10 @@ on:
   push:
     branches:
       - master
-      
+
 jobs:
   deploy:
     runs-on: ubuntu-18.04
-    steps:
-      - uses: actions/checkout@v2
-
-      - name: Enable Flutter Web
-        run: flutter config --enable-web
-
-      - name: Download Dependencies
-        run: flutter pub get
-
-      - name: Build
-        run: flutter build web
         
   FTP-Deploy-Action:
     name: FTP-Deploy-Action
@@ -26,6 +15,15 @@ jobs:
     - uses: actions/checkout@v2.1.0
       with:
         fetch-depth: 2
+        
+    - name: Enable Flutter Web
+      run: flutter config --enable-web
+
+    - name: Download Dependencies
+      run: flutter pub get
+
+    - name: Build
+      run: flutter build web
     - name: FTP-Deploy-Action
       uses: SamKirkland/FTP-Deploy-Action@3.1.1
       with:
