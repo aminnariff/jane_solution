@@ -1,6 +1,6 @@
 # jane_solution
 
-A new Flutter project.
+AOP website - promote better posture and feeling good from head to toes
 
 ## Getting Started
 

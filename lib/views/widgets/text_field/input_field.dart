@@ -6,6 +6,7 @@ import 'package:jane_solution/config/platform.dart';
 import 'package:jane_solution/config/size.dart';
 import 'package:jane_solution/views/widgets/text_field/input_field_attribute.dart';
 import 'package:jane_solution/views/widgets/text_field/login_attribute.dart';
+import 'package:sizer/sizer.dart';
 
 class InputField {
   Widget textInputForm(
@@ -19,7 +20,10 @@ class InputField {
             Expanded(
               child: TextFormField(
                 readOnly: !field.isEditable,
-                style: Theme.of(field.context).textTheme.bodyText1!.apply(color: const Color(0xff1C3664)),
+                style: Theme.of(field.context)
+                    .textTheme
+                    .bodyText1!
+                    .apply(color: const Color(0xff1C3664), fontSizeDelta: isWebMobile ? 10.sp : textSize),
                 cursorColor: const Color(0xFF9b9b9b),
                 keyboardType: (field.isNumber) ? TextInputType.number : TextInputType.text,
                 onTap: () {
@@ -116,7 +120,10 @@ class InputField {
     Function()? onChanged,
   }) {
     return TextFormField(
-      style: Theme.of(context).textTheme.subtitle2!.apply(color: const Color(0xff1C3664), fontSizeDelta: textSize),
+      style: Theme.of(context)
+          .textTheme
+          .bodyText1!
+          .apply(color: const Color(0xff1C3664), fontSizeDelta: isWebMobile ? 10.sp : textSize),
       cursorColor: Colors.blue,
       keyboardType: (field.attribute == 'email') ? TextInputType.emailAddress : TextInputType.text,
       obscureText: field.obscureText,

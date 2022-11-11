@@ -85,6 +85,7 @@ class _ContactUsTodayState extends State<ContactUsToday> {
             initialSourceType: SourceType.html,
             onWebViewCreated: (controller) => webviewController = controller,
           ),
+          const AppPadding().vertical(),
           Column(
             children: [
               for (InputFieldAttribute item in inputList)
@@ -93,11 +94,11 @@ class _ContactUsTodayState extends State<ContactUsToday> {
                   children: [
                     Text(
                       item.labelText,
-                      style: Theme.of(context).textTheme.bodyText1!.apply(fontWeightDelta: 1),
+                      style: Theme.of(context).textTheme.bodyText1!.apply(fontWeightDelta: 1, fontSizeDelta: 10.sp),
                     ),
                     Container(
                       padding: EdgeInsets.symmetric(vertical: screenPadding / 2),
-                      width: 25.w,
+                      width: 85.w,
                       child: InputField().textInputForm(item),
                     ),
                   ],
@@ -116,14 +117,11 @@ class _ContactUsTodayState extends State<ContactUsToday> {
                   ),
                   backgroundColor: MaterialStateProperty.all(Colors.white),
                   padding: MaterialStateProperty.all<EdgeInsets>(
-                      EdgeInsets.symmetric(horizontal: screenPadding * 2, vertical: screenPadding / 1.7)),
+                      EdgeInsets.symmetric(horizontal: screenPadding * 5, vertical: screenPadding)),
                 ),
                 child: Text(
                   'Submit',
-                  style: TextStyle(
-                    fontSize: 4.sp,
-                    color: Colors.black,
-                  ),
+                  style: TextStyle(fontSize: 14.sp, color: Colors.black),
                 ),
               ),
             ],
