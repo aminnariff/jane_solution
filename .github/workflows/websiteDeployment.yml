@@ -4,10 +4,7 @@ on:
     branches:
       - master
 
-jobs:
-  deploy:
-    runs-on: ubuntu-18.04
-        
+jobs:   
   FTP-Deploy-Action:
     name: FTP-Deploy-Action
     runs-on: ubuntu-latest
