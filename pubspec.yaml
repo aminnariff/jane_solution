@@ -44,4 +44,10 @@ flutter:
 
   assets:
     - assets/
+    - assets/fonts/
     - assets/images/
+
+  fonts:
+    - family: Avenir
+      fonts:
+        - asset: assets/fonts/Avenir-Light.ttf
