@@ -82,7 +82,6 @@ class TopBarNavigator extends StatelessWidget {
 
   Widget goToPage() {
     if (pageIndex.value == 0) {
-      return const OurProducts();
       // Navigator.pushNamed(context, '/');
       return const Homepage();
     } else if (pageIndex.value == 1) {
