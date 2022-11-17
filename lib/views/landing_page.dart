@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:jane_solution/config/constants.dart';
 import 'package:jane_solution/config/platform.dart';
@@ -28,13 +29,15 @@ class _LandingPageState extends State<LandingPage> {
         iconTheme: const IconThemeData(color: Colors.red),
         title: Container(
           margin: const EdgeInsets.only(bottom: 15),
-          child: Image(
-            image: const AssetImage(
-              'assets/images/mobile-logo-3.jpeg',
+          child: ElasticIn(
+            child: Image(
+              image: const AssetImage(
+                'assets/images/mobile-logo-3.jpeg',
+              ),
+              height: 8.h,
+              width: 50.w,
+              fit: BoxFit.contain,
             ),
-            height: 8.h,
-            width: 50.w,
-            fit: BoxFit.contain,
           ),
         ),
       ),

@@ -1,4 +1,5 @@
 import 'dart:html' as html;
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:jane_solution/config/constants.dart';
 import 'package:jane_solution/config/platform.dart';
@@ -31,10 +32,12 @@ class _HomepageState extends State<Homepage> {
           children: const [],
         ),
         const AppPadding().vertical(),
-        SelectableTextWidget(
-          text: 'A PRODUCT THAT DOES\nYOUR HEALTH GREAT\nAGAIN',
-          textStyle: Theme.of(context).textTheme.headline1!.apply(fontSizeDelta: 15.sp, fontWeightDelta: 1),
-          textAlign: TextAlign.center,
+        ElasticIn(
+          child: SelectableTextWidget(
+            text: 'A PRODUCT THAT DOES\nYOUR HEALTH GREAT\nAGAIN',
+            textStyle: Theme.of(context).textTheme.headline1!.apply(fontSizeDelta: 15.sp, fontWeightDelta: 1),
+            textAlign: TextAlign.center,
+          ),
         ),
         const AppPadding(denominator: 1.31).vertical(),
         SelectableTextWidget(
@@ -45,7 +48,7 @@ class _HomepageState extends State<Homepage> {
         mobileItem('Heel Pain ?', 'assets/images/heel-Pain.jpg'),
         mobileItem('Knee Pain ?', 'assets/images/knee-Pain.jpg'),
         mobileItem('Back Pain ?', 'assets/images/back-Pain.jpg'),
-        mobileItem('Achillles Tendonitis ?', 'assets/images/achittes.jpg'),
+        mobileItem('Achilles Tendonitis ?', 'assets/images/achittes.jpg'),
         const AppPadding(denominator: 2).vertical(),
         mobileLookUsNowButton(),
         const AppPadding().vertical(),
@@ -59,15 +62,19 @@ class _HomepageState extends State<Homepage> {
         children: [
           // const TopBarNavigator(),
           const AppPadding().vertical(),
-          SelectableTextWidget(
-            text: 'Get Ready to Align',
-            textStyle: Theme.of(context).textTheme.bodyText1!.apply(fontSizeDelta: 1.5.sp),
+          JelloIn(
+            child: SelectableTextWidget(
+              text: 'Get Ready to Align',
+              textStyle: Theme.of(context).textTheme.bodyText1!.apply(fontSizeDelta: 1.5.sp),
+            ),
           ),
           const AppPadding().vertical(),
-          SelectableTextWidget(
-            text: 'A PRODUCT THAT DOES YOUR HEALTH\nGREAT AGAIN',
-            textStyle: Theme.of(context).textTheme.headline1!.apply(fontSizeDelta: 5.5.sp),
-            textAlign: TextAlign.center,
+          FadeIn(
+            child: SelectableTextWidget(
+              text: 'A PRODUCT THAT DOES YOUR HEALTH\nGREAT AGAIN',
+              textStyle: Theme.of(context).textTheme.headline1!.apply(fontSizeDelta: 5.5.sp),
+              textAlign: TextAlign.center,
+            ),
           ),
           const AppPadding(denominator: 1 / 3).vertical(),
           Row(
@@ -75,7 +82,7 @@ class _HomepageState extends State<Homepage> {
               webItem('Heel Pain ?', 'assets/images/heel-Pain.jpg'),
               webItem('Knee Pain ?', 'assets/images/knee-Pain.jpg'),
               webItem('Back Pain ?', 'assets/images/back-Pain.jpg'),
-              webItem('Achillles Tendonitis ?', 'assets/images/achittes.jpg'),
+              webItem('Achilles Tendonitis ?', 'assets/images/achittes.jpg'),
             ],
           ),
           const AppPadding(denominator: 1 / 3).vertical(),
@@ -113,12 +120,14 @@ class _HomepageState extends State<Homepage> {
           SelectableTextWidget(
             text: text,
           ),
-          Image(
-            image: AssetImage(
-              imagePath,
+          ElasticIn(
+            child: Image(
+              image: AssetImage(
+                imagePath,
+              ),
+              width: 15.w,
+              height: 15.w,
             ),
-            width: 15.w,
-            height: 15.w,
           ),
         ],
       ),
