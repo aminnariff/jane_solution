@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:hovering/hovering.dart';
 import 'package:jane_solution/config/constants.dart';
@@ -19,12 +20,14 @@ class TopBarNavigator extends StatelessWidget {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.end,
       children: [
-        Image(
-          image: const AssetImage(
-            'assets/images/logo-3.jpg',
+        FadeIn(
+          child: Image(
+            image: const AssetImage(
+              'assets/images/logo-3.jpg',
+            ),
+            width: 40.w,
+            height: 20.h,
           ),
-          width: 40.w,
-          height: 20.h,
         ),
         Container(
           margin: EdgeInsets.only(bottom: screenPadding * 1.5),

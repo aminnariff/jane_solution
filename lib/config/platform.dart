@@ -1,4 +1,4 @@
 import 'package:flutter/foundation.dart';
 
-final isWebMobile =
+bool isWebMobile =
     kIsWeb && (defaultTargetPlatform == TargetPlatform.iOS || defaultTargetPlatform == TargetPlatform.android);
