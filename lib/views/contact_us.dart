@@ -208,7 +208,7 @@ class _ContactUsTodayState extends State<ContactUsToday> {
   void sendEmail() {
     final Uri emailLaunchUri = Uri(
       scheme: 'mailto',
-      path: 'amin.mohdariff@gmail.com',
+      path: emailAddress,
       query: encodeQueryParameters(<String, String>{
         'subject': inputList.where((element) => element.labelText == 'Subject').first.controller.text,
         'body': inputList.where((element) => element.labelText == 'Message').first.controller.text,

@@ -7,6 +7,7 @@ const String mobileMapContent =
     '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127497.0832711684!2d101.652031589911!3d3.018208449026639!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc4be5cebdf981%3A0xeb99db6552e4cf9c!2sFOOT%20SOUL%20SOLUTIONS%20%2F%20ALIGN%20ORTHOTIC!5e0!3m2!1sen!2smy!4v1666521306586!5m2!1sen!2smy" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>';
 const String mapContent =
     '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127497.0832711684!2d101.652031589911!3d3.018208449026639!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc4be5cebdf981%3A0xeb99db6552e4cf9c!2sFOOT%20SOUL%20SOLUTIONS%20%2F%20ALIGN%20ORTHOTIC!5e0!3m2!1sen!2smy!4v1666519806323!5m2!1sen!2smy" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>';
+const String emailAddress = 'jane.solelution@gmail.com';
 
 List<String> navigationBar = [
   'Home',
